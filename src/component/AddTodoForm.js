@@ -1,4 +1,7 @@
-import React, { memo }  from 'react';
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-unused-vars */
+
+import React, { memo } from 'react';
 import { Input, Item, Icon } from 'native-base';
 
 const AddTodoList = memo((props) => {

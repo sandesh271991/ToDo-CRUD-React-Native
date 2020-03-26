@@ -1,6 +1,10 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-unused-vars */
 import React, { memo } from 'react';
 import { StyleSheet, FlatList } from 'react-native';
-import { Text, ListItem, Left, Icon, Body, Right } from "native-base";
+import {
+  Text, ListItem, Left, Icon, Body, Right,
+} from 'native-base';
 
 const TodoList = memo((props) => {
   const { items, onItemCheck, onItemRemove } = props;
@@ -9,18 +13,17 @@ const TodoList = memo((props) => {
     <FlatList
       data={items}
       contentContainerStyle={styles.listView}
-      renderItem={({ item, index }) =>
-        <ListItem icon>
+      renderItem={({ item, index }) => <ListItem icon>
           <Left>
             <Icon
               type="MaterialIcons"
               style={styles.checkbox}
-              name={item.checked ? "check-box" : "check-box-outline-blank"}
+              name={item.checked ? 'check-box' : 'check-box-outline-blank'}
               onPress={() => onItemCheck(index)}
             />
           </Left>
           <Body>
-          <Text>{item.todoText}</Text>
+            <Text>{item.todoText}</Text>
           </Body>
           <Right>
             <Icon
@@ -48,5 +51,5 @@ const styles = StyleSheet.create({
   checkbox: {
     color: 'grey',
     fontSize: 20,
-  }
+  },
 });

@@ -1,6 +1,11 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-unused-vars */
 import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Container, Header, Body, Title, Content } from "native-base";
+import {
+  Container, Header, Body, Title, Content,
+} from 'native-base';
+
 
 const Layout = memo((props) => {
   const { children } = props;
@@ -13,9 +18,9 @@ const Layout = memo((props) => {
         </Body>
       </Header>
       <View style={styles.container}>
-      <Content style={styles.content}>
-        {children}
-      </Content>
+        <Content style={styles.content}>
+          {children}
+        </Content>
       </View>
     </Container>
   );

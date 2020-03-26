@@ -1,3 +1,6 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-unused-vars */
 import { useState } from 'react';
 
 export const useInputValue = (initialValue = '') => {
@@ -5,8 +8,9 @@ export const useInputValue = (initialValue = '') => {
 
   return {
     inputValue,
-    changeInput: event => {
-      setInputValue(event.nativeEvent.text)},
+    changeInput: (event) => {
+      setInputValue(event.nativeEvent.text);
+    },
     clearInput: () => setInputValue(''),
   };
 };
@@ -18,23 +22,23 @@ export const useTodos = (initialValue = []) => {
   return {
     todos,
 
-    addTodo: todoText => {
+    addTodo: (todoText) => {
       if (todoText !== '') {
         setTodos(todos.concat({ todoText, checked: false }));
       }
     },
 
-    checkTodo: checkIndex => {
+    checkTodo: (checkIndex) => {
       setTodos(
         todos.map((todo, index) => {
           if (checkIndex === index) todo.checked = !todo.checked;
-        return todo;
-        })
-      )
+          return todo;
+        }),
+      );
     },
 
-    removeTodo: removeIndex => {
-      setTodos(todos.filter((todos, index) => removeIndex !== index));
-    }
+    removeTodo: (removeIndex) => {
+      setTodos(todos.filter((_todos, index) => removeIndex !== index));
+    },
   };
 };
